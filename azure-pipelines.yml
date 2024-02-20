@@ -5,7 +5,7 @@ trigger:
 variables:
   resourceGroupName: 'example'
   location: 'westeurope'
-  azureSubscription: 'AzureConnection'
+  azureSubscription: 'New-Dev-ServiceConnection'
   resourcePrefix: 'bicep'
 
 pool:
@@ -44,7 +44,7 @@ stages:
           - task: AzureCLI@2
             displayName: 'deploy bicep template'
             inputs:
-              azureSubscription: $(azureSubscription) 
+              azureSubscription: '$(azureSubscription)'
               scriptType: 'pscore'
               scriptLocation: 'inlineScript'
               inlineScript: |
